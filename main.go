@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func generateMultTable() {
 	for i := 1; i < 11; i++ {
@@ -22,6 +25,19 @@ func breakLoopWithConditional() {
 		count += 1
 	}
 }
+
+func check(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+func readExternalFile() {
+	data, error := os.ReadFile("textfile.txt")
+	check(error)
+	fmt.Printf(string(data))
+
+}
+
 func main() {
-	breakLoopWithConditional()
+	readExternalFile()
 }
