@@ -11,6 +11,17 @@ func generateMultTable() {
 	}
 }
 
+func breakLoopWithConditional() {
+	count := 1
+
+	for {
+		fmt.Println(count)
+		if count == 100 {
+			break
+		}
+		count += 1
+	}
+}
 func main() {
-	generateMultTable()
+	breakLoopWithConditional()
 }
